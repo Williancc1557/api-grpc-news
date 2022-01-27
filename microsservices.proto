@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+
+
+service GetNewsService {
+    rpc getAllGameNews(GetAllGameNewsRequest) returns (GetAllGameNewsResponse) {};
+    rpc getGameNewsRecent(empty) returns (newResponse) {};
+};
+
+message empty {}
+
+
+
+message GetAllGameNewsRequest {
+    int32 requestsNumber = 1;
+};
+
+
+message newResponse { 
+    string title = 1;
+    repeated string paragraphs = 2;
+};
+
+message GetAllGameNewsResponse {
+    repeated newResponse allNews = 1;
+};
+

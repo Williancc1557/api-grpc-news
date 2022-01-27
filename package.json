@@ -1,0 +1,22 @@
+{
+  "name": "api-geatway-news",
+  "version": "0.0.0",
+  "description": "Connect all microsservices for news",
+  "main": "index.ts",
+  "repository": "https://github.com/Williancc1557/api-geatway-news",
+  "author": "Willian Cavalcanti Coelho",
+  "license": "MIT",
+  "private": false,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node ./src/server/server.js",
+    "client": "node ./client/"
+  },
+  "dependencies": {
+    "@grpc/proto-loader": "^0.6.9",
+    "axios": "^0.25.0",
+    "grpc": "^1.24.11",
+    "pino": "^7.6.4",
+    "grpc-tools": "^1.11.2"
+  }
+}
