@@ -7,6 +7,10 @@ const userClient = grpc.loadPackageDefinition(protoObject)
 
 const client = new userClient.GetNewsService("localhost:5000", grpc.credentials.createInsecure())
 
+/*
+* Methods
+*/
+
 client.getGameNewsRecent({}, (err, notes) => {
     console.log(err, notes)
 })
