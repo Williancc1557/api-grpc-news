@@ -14,6 +14,16 @@ class MicrosservicesRequestsProvider {
         })
         return data
     }
+
+    async getTechnologyNews(requestsNumber = 10) {
+        const { data } = await axios.get("https://technology-news-api.herokuapp.com", {
+            headers: {
+                requestsNumber
+            }
+        })
+        console.log(data)
+        return data
+    }
 };
 
 new MicrosservicesRequestsProvider().getAllGameNews()

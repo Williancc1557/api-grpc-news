@@ -16,3 +16,7 @@ client.getAllGameNews({
 }, (err, notes) => {
     console.log(err, notes.allNews)
 })
+
+client.getTechnologyNews({}, (err, res) => {
+    console.log(res)
+})

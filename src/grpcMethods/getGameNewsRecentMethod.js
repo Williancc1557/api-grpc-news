@@ -7,11 +7,20 @@ const getGameNewsRecentMethod = async (_, callback) => {
     callback(null, request)
 }
 
-const getAllGameNewsMethod = async ({ request: { requestsNumber } }, callback) => {
-    const request = await new MicrosservicesRequestsProvider().getAllGameNews(requestsNumber)
+const getAllGameNewsMethod = async (_, callback) => {
+    const request = await new MicrosservicesRequestsProvider().getAllGameNews()
+
     callback(null, {
         allNews: request
     })
 }
 
-module.exports = { getGameNewsRecentMethod, getAllGameNewsMethod }
+const getTechnology = async ({ requestsNumber }, callback) => {
+    const request = await new MicrosservicesRequestsProvider().getTechnologyNews(requestsNumber)
+
+    callback(null, {
+        newTechnology: request
+    })
+}
+
+module.exports = { getGameNewsRecentMethod, getAllGameNewsMethod, getTechnology }
